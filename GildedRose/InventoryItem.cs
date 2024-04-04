@@ -9,10 +9,15 @@ public class InventoryItem
     }
 
     public int SellIn { get; private set; }
-    public int Quality { get; }
+    public int Quality { get; private set; }
 
     public void ReduceSellIn()
     {
         SellIn--;
+    }
+
+    public void ReduceQuality()
+    {
+        Quality--;
     }
 }
