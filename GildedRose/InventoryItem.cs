@@ -18,6 +18,7 @@ public class InventoryItem
 
     public void ReduceQuality()
     {
-        Quality--;
+        if (SellIn < 0) Quality -= 2;
+        else Quality--;
     }
 }
