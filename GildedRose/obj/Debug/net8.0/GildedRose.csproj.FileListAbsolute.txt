@@ -1,0 +1,12 @@
+/Users/byronsommardahl/RiderProjects/GildedRoseKata-CSharp/GildedRose/bin/Debug/net8.0/GildedRose.deps.json
+/Users/byronsommardahl/RiderProjects/GildedRoseKata-CSharp/GildedRose/bin/Debug/net8.0/GildedRose.dll
+/Users/byronsommardahl/RiderProjects/GildedRoseKata-CSharp/GildedRose/bin/Debug/net8.0/GildedRose.pdb
+/Users/byronsommardahl/RiderProjects/GildedRoseKata-CSharp/GildedRose/obj/Debug/net8.0/GildedRose.GeneratedMSBuildEditorConfig.editorconfig
+/Users/byronsommardahl/RiderProjects/GildedRoseKata-CSharp/GildedRose/obj/Debug/net8.0/GildedRose.AssemblyInfoInputs.cache
+/Users/byronsommardahl/RiderProjects/GildedRoseKata-CSharp/GildedRose/obj/Debug/net8.0/GildedRose.AssemblyInfo.cs
+/Users/byronsommardahl/RiderProjects/GildedRoseKata-CSharp/GildedRose/obj/Debug/net8.0/GildedRose.csproj.CoreCompileInputs.cache
+/Users/byronsommardahl/RiderProjects/GildedRoseKata-CSharp/GildedRose/obj/Debug/net8.0/GildedRose.sourcelink.json
+/Users/byronsommardahl/RiderProjects/GildedRoseKata-CSharp/GildedRose/obj/Debug/net8.0/GildedRose.dll
+/Users/byronsommardahl/RiderProjects/GildedRoseKata-CSharp/GildedRose/obj/Debug/net8.0/refint/GildedRose.dll
+/Users/byronsommardahl/RiderProjects/GildedRoseKata-CSharp/GildedRose/obj/Debug/net8.0/GildedRose.pdb
+/Users/byronsommardahl/RiderProjects/GildedRoseKata-CSharp/GildedRose/obj/Debug/net8.0/ref/GildedRose.dll
