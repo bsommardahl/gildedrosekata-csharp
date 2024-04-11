@@ -14,7 +14,15 @@ public class InventoryItem(string name, int sellIn, int quality)
     public void AdjustQuality(int increment)
     {
         var newQuality = Quality + increment;
-        Quality = newQuality >= 0 ? newQuality : 0;
+        switch (newQuality)
+        {
+            case > 50:
+            case < 0:
+                return;
+            default:
+                Quality = newQuality;
+                break;
+        }
     }
     
 }
