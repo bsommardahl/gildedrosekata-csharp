@@ -1,25 +1,20 @@
 namespace GildedRose;
 
-public class InventoryItem
+public class InventoryItem(string name, int sellIn, int quality)
 {
-    public InventoryItem(string name, int sellIn, int quality)
+    public string Name { get; } = name;
+    public int SellIn { get; private set; } = sellIn;
+    public int Quality { get; private set; } = quality;
+
+    public void AdjustSellIn(int increment)
     {
-        SellIn = sellIn;
-        Quality = quality;
+        SellIn += increment;
     }
 
-    public int SellIn { get; private set; }
-    public int Quality { get; private set; }
-
-    public void ReduceSellIn()
+    public void AdjustQuality(int increment)
     {
-        SellIn--;
+        var newQuality = Quality + increment;
+        Quality = newQuality >= 0 ? newQuality : 0;
     }
-
-    public void ReduceQuality()
-    {
-        if (Quality <= 0) return;
-        if (SellIn < 0) Quality -= 2;
-        else Quality--;
-    }
+    
 }
