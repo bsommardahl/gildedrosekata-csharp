@@ -10,10 +10,12 @@ public class BackstagePassItemAdjuster : IInventoryItemAdjuster
     public void Adjust(InventoryItem item)
     {
         item.AdjustSellIn(-1);
+        item.AdjustQuality(item.SellIn switch
+        {
+            < 5 => 3,
+            <= 10 => 2,
+            _ => 1
+        });
 
-        if(item.SellIn <=10)
-            item.AdjustQuality(2);
-        else
-            item.AdjustQuality(1);
     }
 }
