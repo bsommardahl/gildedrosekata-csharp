@@ -4,12 +4,13 @@ namespace GildedRose.msTest;
 public class when_adjusting_a_conjured_item
 {
     [TestMethod]
-    public void it_should_degrade_quality_at_double_rate()
+    [DataRow(10, 10, 8)]
+    [DataRow(0, 0, 0)]
+    public void it_should_degrade_quality_at_double_rate(int preAdjustmentSellIn, int originalQuality, int adjustedQuality)
     {
-        var expectedQuality = 18;
-        var conjuredInventoryItem = new ConjuredInventoryItem("Some Connjured Item", 10, 20);
+        var conjuredInventoryItem = new ConjuredInventoryItem("Some Conjured Item", preAdjustmentSellIn, originalQuality);
         var inventoryItemAdjuster = new ConjuredInventoryItemAdjuster();
         inventoryItemAdjuster.Adjust(conjuredInventoryItem);
-        Assert.AreEqual(expectedQuality, conjuredInventoryItem.Quality);
+        Assert.AreEqual(adjustedQuality, conjuredInventoryItem.Quality);
     }
 }

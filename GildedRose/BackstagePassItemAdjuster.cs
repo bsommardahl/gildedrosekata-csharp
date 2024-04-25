@@ -4,7 +4,7 @@ public class BackstagePassItemAdjuster : IInventoryItemAdjuster
 {
     public bool Match(InventoryItem item)
     {
-        return false;
+        return item.Name == "Backstage Pass";
     }
 
     public void Adjust(InventoryItem item)

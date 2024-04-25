@@ -8,6 +8,8 @@ public class InventoryItemDayCloser(InventoryItemAdjusterFactory inventoryItemAd
             CloseOldItems(item);
         else
             CloseCurrentItems(item);
+
+        if (item.Quality < 0) item.AdjustQuality(item.Quality * -1);
     }
 
     private void CloseCurrentItems(InventoryItem item)
