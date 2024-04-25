@@ -1,15 +1,24 @@
 namespace GildedRose;
 
-public class InventoryItemDayCloser
+public class InventoryItemDayCloser(InventoryItemAdjusterFactory inventoryItemAdjusterFactory)
 {
     public void Close(InventoryItem item)
     {
-        IQualityAdjuster qualityAdjuster = new DefaultQualityAdjuster();
         if (item.SellIn < 0)
-            qualityAdjuster = new OldItemQualityAdjuster();
-        else if (item.Name == "Aged Brie")
-            qualityAdjuster = new AgedBrieQualityAdjuster();
-        
-        qualityAdjuster.Adjust(item);
+            CloseOldItems(item);
+        else
+            CloseCurrentItems(item);
+    }
+
+    private void CloseCurrentItems(InventoryItem item)
+    {
+        var inventoryItemAdjuster = inventoryItemAdjusterFactory.Create(item);
+        inventoryItemAdjuster.Adjust(item);
+    }
+
+    private static void CloseOldItems(InventoryItem item)
+    {
+        item.AdjustSellIn(-1);
+        item.AdjustQuality(-2);
     }
 }

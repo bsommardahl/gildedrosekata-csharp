@@ -5,7 +5,7 @@ namespace GildedRose.msTest;
 [TestClass]
 public class when_closing_the_day_on_a_standard_inventory_item
 {
-    private readonly InventoryItemDayCloser _dayCloser = new();
+    private readonly InventoryItemDayCloser _dayCloser = new(new InventoryItemAdjusterFactory(new List<IInventoryItemAdjuster>()));
     private InventoryItem _item;
 
     [TestInitialize]

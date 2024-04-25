@@ -1,26 +1,34 @@
 namespace GildedRose.msTest;
 
 [TestClass]
-public class when_closing_the_day_on_sulfuras_which_is_a_legendary_item
+public class when_closing_the_day_on_a_legendary_item
 {
-    private InventoryItemDayCloser _closer;
+    private InventoryItem _item;
+
+    const int OriginalQuality = 30;
+    const int OriginalSellIn = 40;
 
     [TestInitialize]
-    public void given_a_sulfuras_inventory_item()
+    public void given_an_inventory_item_closer()
     {
-        _closer = new InventoryItemDayCloser();
+        var closer = new InventoryItemDayCloser(new InventoryItemAdjusterFactory(new List<IInventoryItemAdjuster>()
+        {
+            new LegendaryInventoryItemAdjuster()
+        }));
+        
+        _item = new LegendaryInventoryItem("Sulfuras", OriginalSellIn, OriginalQuality);
+        closer.Close(_item);
     }
     
     [TestMethod]
     public void it_should_never_have_to_be_sold()
     {
-        const int originalQuality = 30;
-        const int originalSellIn = 40;
-        var item = new InventoryItem("Sulfuras", originalSellIn, originalQuality);
-        _closer.Close(item);
-        
-        Assert.AreEqual(originalSellIn, item.SellIn);
+        Assert.AreEqual(OriginalSellIn, _item.SellIn);
     }
-    
-    //it_should_never_decrease_in_quality
+
+    [TestMethod]
+    public void it_should_never_decrease_in_quality()
+    {
+        Assert.AreEqual(OriginalQuality, _item.Quality);
+    }
 }
