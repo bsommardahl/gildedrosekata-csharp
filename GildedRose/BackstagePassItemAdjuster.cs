@@ -9,6 +9,7 @@ public class BackstagePassItemAdjuster : IInventoryItemAdjuster
 
     public void Adjust(InventoryItem item)
     {
-        //do nothing
+        item.AdjustSellIn(-1);
+        item.AdjustQuality(1);
     }
 }
