@@ -1,8 +1,8 @@
 namespace GildedRose;
 
-public class AgedBrieInventoryItemAdjuster : IInventoryItemAdjuster
+public class AgedBrieInventoryItemAdjuster : IInventoryItemAdjuster, IInventoryItemAdjusterMatcher
 {
-    public bool Match(InventoryItem item)
+    public bool CanAdjust(InventoryItem item)
     {
         return item.Name.ToLower() == "aged brie";
     }

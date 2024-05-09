@@ -5,7 +5,8 @@ public class InventoryItemAdjusterFactory(IEnumerable<IInventoryItemAdjuster> ad
     public IInventoryItemAdjuster Create(InventoryItem item)
     {
         var adjuster = adjusters
-            .FirstOrDefault(x => x.Match(item), 
+            .Where(x=> x is IInventoryItemAdjusterMatcher)
+            .FirstOrDefault(x => ((IInventoryItemAdjusterMatcher)x).CanAdjust(item), 
                 new DefaultInventoryItemAdjuster());
         return adjuster;
     }

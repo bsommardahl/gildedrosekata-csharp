@@ -1,8 +1,8 @@
 namespace GildedRose;
 
-public class LegendaryInventoryItemAdjuster : IInventoryItemAdjuster
+public class LegendaryInventoryItemAdjuster : IInventoryItemAdjuster, IInventoryItemAdjusterMatcher
 {
-    public bool Match(InventoryItem item)
+    public bool CanAdjust(InventoryItem item)
     {
         return item is LegendaryInventoryItem;
     }

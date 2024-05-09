@@ -4,7 +4,6 @@ namespace GildedRose.msTest;
 public class when_closing_the_day_on_a_legendary_item
 {
     private InventoryItem _item;
-
     const int OriginalQuality = 30;
     const int OriginalSellIn = 40;
 

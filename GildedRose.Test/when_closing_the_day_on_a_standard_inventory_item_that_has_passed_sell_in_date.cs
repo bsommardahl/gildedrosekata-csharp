@@ -10,7 +10,7 @@ public class when_closing_the_day_on_a_standard_inventory_item_that_has_passed_s
         var originalQuality = 10;
         var oldItemSellIn = -1;
         var inventoryItem = new InventoryItem("Old Cheese", oldItemSellIn, originalQuality);
-        var expectedQuality = 8;
+        var expectedQuality = originalQuality - 2;
         dayCloser.Close(inventoryItem);
         Assert.AreEqual(expectedQuality, inventoryItem.Quality);
     }

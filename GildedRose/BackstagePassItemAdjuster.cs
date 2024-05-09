@@ -1,8 +1,8 @@
 namespace GildedRose;
 
-public class BackstagePassItemAdjuster : IInventoryItemAdjuster
+public class BackstagePassItemAdjuster : IInventoryItemAdjuster, IInventoryItemAdjusterMatcher
 {
-    public bool Match(InventoryItem item)
+    public bool CanAdjust(InventoryItem item)
     {
         return item.Name == "Backstage Pass";
     }

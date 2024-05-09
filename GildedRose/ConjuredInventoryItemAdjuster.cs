@@ -1,10 +1,10 @@
 namespace GildedRose;
 
-public class ConjuredInventoryItemAdjuster : IInventoryItemAdjuster
+public class ConjuredInventoryItemAdjuster : IInventoryItemAdjuster, IInventoryItemAdjusterMatcher
 {
-    public bool Match(InventoryItem item)
+    public bool CanAdjust(InventoryItem item)
     {
-        return false;
+        throw new NotImplementedException();
     }
 
     public void Adjust(InventoryItem item)
